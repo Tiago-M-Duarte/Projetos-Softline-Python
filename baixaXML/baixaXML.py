@@ -1,5 +1,5 @@
+# Algoritmo para baixar xmls pelo Fsist utilizando chaves NFe colocadas no arquivo "baixaXML.txt"
 import pyautogui
-import keyboard
 from time import sleep
 
 sleep(3)
