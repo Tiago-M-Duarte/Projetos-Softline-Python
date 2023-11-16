@@ -1,0 +1,7 @@
+Projeto desenvolvido por Tiago Duarte para executar parte de tarefas
+repetitivas na Softline ou até mesmo aumotiza-las por completo.
+
+-Inutilizador serve para inutilizar uma lista de sequências de NFC-es no DecisionPDV.
+-BaixaXML serve para baixar XMLs de NF-es pelo site FSIST.
+-AutoEnvio serve automatizar por completo o processo de reenvio de notas no DecisionPDV.
+

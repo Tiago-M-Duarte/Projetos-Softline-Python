@@ -1,3 +1,7 @@
+# Algoritmo para inutilizar notas no PDV, 
+# só é necessário apertar F7 ao finalizar inutilização de sequência 
+# para ir para próxima.
+# ATENÇÃO, VERIFICAR SE SERIE ESTÁ CORRETA ANTES DE DAR START
 import pyautogui
 import keyboard
 from time import sleep
