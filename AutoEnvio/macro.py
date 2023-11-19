@@ -15,18 +15,20 @@ def on_press(event):
     global verificador
     if event.name == 'f7':
         verificador = 1
-        logging.info('Loop interrompido.')
+        logging.info(f'notas com erro: {numeroNota}')
+        logging.info(f'Loop interrompido com {notasEnviadas} notas enviadas')
 
 keyboard.on_press(on_press)
 
 sleep(3)
 
 numeroNota = 0
+notasEnviadas = 0
 
 while verificador == 0:
     # Encontrar a posição de referência na tela
     # (print deve ser tirada toda vez antes de iniciar a execução do código)
-    localizacao = pyautogui.locateOnScreen('referencia.png', confidence=0.8)
+    localizacao = pyautogui.locateOnScreen('imagens/referencia.png', confidence=0.8)
     if localizacao:
         logging.info('Referencia encontrada, inciando loop')
         print('Referencia encontrada, inciando loop')
@@ -48,12 +50,12 @@ while verificador == 0:
     pyautogui.press('enter', presses=3, interval=0.5)
 
     #Espera aparecer botão de ok 'ok.png'
-    while not pyautogui.locateOnScreen('ok.png'):
+    while not pyautogui.locateOnScreen('imagens/ok.png'):
         sleep(0.5)
 
-    #Comparar tela com notificação de nota autorizada, se for normal segue o código, se não adiciona +1 a numeroNota
-    #if not pyautogui.locateOnScreen('autorizada.png'):
-        #numeroNota += 1
+    #Comparar tela com notificação de nota autorizada, se for normal segue o código, se não adiciona +1 a notasEnviadas
+    if pyautogui.locateOnScreen('imagens/autorizada.png'):
+        notasEnviadas += 1
 
     #Enter para dar ok
     pyautogui.press('enter')
@@ -61,5 +63,4 @@ while verificador == 0:
     #Compara tela com print, se for igual adicionar +1 a numeroNota
     if(pyautogui.locateOnScreen(referencia)):
         numeroNota += 1
-    logging.info(f'notas com erro: {numeroNota}')
     print('notas com erro:', numeroNota)
