@@ -61,6 +61,6 @@ while verificador == 0:
     pyautogui.press('enter')
     sleep(2)
     #Compara tela com print, se for igual adicionar +1 a numeroNota
-    if(pyautogui.locateOnScreen(referencia)):
+    if(pyautogui.locateOnScreen(referencia, confidence=0.9)):
         numeroNota += 1
     print('notas com erro:', numeroNota)
