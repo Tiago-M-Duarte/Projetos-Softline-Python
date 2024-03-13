@@ -26,6 +26,8 @@ with open('inutilizar.txt', 'r') as arquivo:
         pyautogui.write(inicio + '-' + fim)
         pyautogui.click(993,659,duration=0.5)
         pyautogui.click(1336,35,duration=2)
-        keyboard.wait('f7')
+        while not pyautogui.locateOnScreen('ok.png'):
+            sleep(0.5)
+        #keyboard.wait('f12')
         pyautogui.click(690,459,duration=1)
         sleep(1)
