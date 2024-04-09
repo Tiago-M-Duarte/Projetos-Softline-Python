@@ -47,7 +47,7 @@ while verificador == 0:
     pyautogui.press('down', presses=numeroNota)
 
     #Dá enter para enviar nota
-    pyautogui.press('enter', presses=3, interval=0.5)
+    pyautogui.press('enter', presses=2, interval=0.5)
 
     #Espera aparecer botão de ok 'ok.png'
     while not pyautogui.locateOnScreen('imagens/ok.png'):
